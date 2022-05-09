@@ -1,0 +1,94 @@
+@import '../../assets/scss/abstracts/mixins';
+
+.contact-card {
+  position: absolute;
+  top: 3.2rem;
+  left: 0;
+  height: 18rem;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background-color: var(--color-bg);
+
+  &::after,
+  &::before {
+    content: '';
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    right: 0;
+  }
+  
+  &::after {
+    top: 0;
+    background: linear-gradient(180deg, rgba(207, 207, 207, 1) 0%, rgba(238, 238, 238, 1) 100%);
+  }
+
+  &::before {
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(238, 238, 238, 1) 0%, rgba(199, 199, 199, 1) 100%);
+  }
+
+  &__image-side {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__close {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &__thumbnail {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &__content-side {
+    flex: 1;
+  }
+
+  &__name {
+    color: var(--low-emphasis-text-color);
+    padding: 1rem 0;
+  }
+
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info-list-item {
+    font-size: 1.2rem;
+
+    & > span:first-child {
+      font-weight: 700;
+      display: inline-block;
+      width: 6.5rem;
+    }
+  }
+
+  &__username {
+    z-index: 1;
+    transform: translateY(-12%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: linear-gradient(225deg, rgba(209, 63, 0, 1) 0%, rgba(215, 86, 39, 1) 100%);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    
+    & > * {
+      font-size: 1rem;
+      color: var(--color-white);
+    }
+  }
+}
